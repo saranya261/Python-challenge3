@@ -2,13 +2,22 @@ N=int(input("enter no of students:"))
 marks=[0]*N
 count=0
 count_f=0
+roll=int(input("Enter your 2-digit roll for personalisation:"))
+
+digit=roll%10
+
 for i in range(len(marks)):
     marks[i]=int(input("enter marks:"))
-    if i%5==0:
+    digi=marks[i]%10
+    if digi==digit:
         if marks[i]>=95 and marks[i]<=100:
-          marks[i]=100
+           past=marks[i]
+           marks[i]=100
+           print(f"the {past}  are increased to {marks[i]}due to personalisation")
         else:
+          past = marks[i]
           marks[i]=marks[i]+5
+          print(f"the {past}  are increased to {marks[i]}due to personalisation")
     if marks[i]>=90 and marks[i]<=100:
         print(f"{marks[i]}->Excellent")
         count=count+1
